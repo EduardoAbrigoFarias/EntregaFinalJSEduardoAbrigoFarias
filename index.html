@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6f65159a17.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+    <!-- link de estilos de swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <title>TIENDA ONLINE</title>
+</head>
+<body onload=loadClientes()>     
+    <button type="button" class="btnDark" onclick="cambiarModo()">Oscuro/Claro</button>
+
+    <header class="header">
+        <a href="#" class="prologo">TIENDA ONLINE</a>
+        <input type="checkbox" id="side-menu" class="side-menu">
+        <label for="side-menu" class="hamb"><span class="hamb-line"></span></label>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="./index.html">Inicio</a></li>                
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>                
+                <li><a href="./productos.html">Venta</a></li>
+                <li><a href="./carro.html">Carrito</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>              
+            </ul>
+        </nav>
+
+        <img src="./img/movil3.jpg" alt="ventas">
+         <div id="inicio" >  
+            <h1 data-aos="flip-left">Productos de<br/>Electrónica<br/>perfumería para ti y tu empresa</h1>
+             <div>
+                <p data-aos="flip-left">VENTA DE PROFESIONALES EXPERTOS. </p>              
+             </div>
+        </div>
+     </header>
+
+    <!-- Creo Slice del Productos en Oferta -->
+    <h2 class="h2proofer wrapper square">Nuestros productos con descuento</h2>    
+    <div class="swiper" id="ofertas">
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide" > <img src="./img/pro1.png"  alt="producto" class="imgswip"> </div>
+        <div class="swiper-slide"> <img src="./img/pro2.png"  alt="producto" class="imgswip"></div>
+        <div class="swiper-slide"> <img src="./img/pro3.png"  alt="producto" class="imgswip"></div>
+        <div class="swiper-slide"> <img src="./img/pro4.png"  alt="producto" class="imgswip"></div>
+        <div class="swiper-slide"> <img src="./img/pro5.png"  alt="producto" class="imgswip"></div>
+        <div class="swiper-slide"> <img src="./img/pro6.png"  alt="producto" class="imgswip"></div>
+        <div class="swiper-slide"> <img src="./img/pro7.png"  alt="producto" class="imgswip"></div>
+        <div class="swiper-slide"> <img src="./img/pro8.png"  alt="producto" class="imgswip"></div>
+        
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+   </div>     
+     <section class="asesoria" data-aos="flip-left">
+        <div class="card-group">
+            <div class="card">
+              <img src="./img/pc.png" class="card-img-top" alt="Ventas">
+              <div class="card-body">
+              <h5 class="card-title">No pierdas ninguna venta</h5>
+              <p>Huawei P30</p>
+              <p>MacBook Pro</p>
+              <p class="card-text">Conoce tus productos más vendidos y no dejes que se te agoten nunca. Revisa en tiempo real tu stock</p>
+              </div>
+           </div>
+
+            <div class="card">
+                <img src="./img/pc2.png" class="card-img-top" alt="Reportes">
+                <div class="card-body">
+                <h5 class="card-title">Ofertas imperdibles</h5>
+                <p>Samsung Universe 9</p>
+                <p>Samsung Galaxy Book</p>
+                <p>Infinix INBOOK</p>
+                <p class="card-text">Revisa toda la información para tu negocio en tiempo real. Información  para tus ventas</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./img/pc3.png" class="card-img-top" alt="Locales">
+                <div class="card-body">
+                <h5 class="card-title">Plataforma funcional</h5>
+                <p>Controla, gestiona y optimiza tus procesos como ventas y gestión</p>
+                <p class="card-text">Adquiere productos en simples pasos. Selecciona tus productos</p>
+                </div>
+            </div>
+         </div>
+       </section>
+      </div> 
+
+    <div id="clientes" class="carcli"> 
+    </div>
+
+    <section id="nosotros" data-aos="flip-left">
+        <h2 class="h2pro wrapper square">Nosotros</h2>
+        <div class="card-group">
+            <div class="cardnos">              
+                <div class="card-body">
+                <p class="card-text"> El comercio electrónico está revolucionado la manera cómo </p>
+                <p class="card-text"> compramos y nos relacionamos con las marcas gracias a sus  </p>
+                <p class="card-text"> beneficios como el ahorro de tiempo, acceso a promociones </p>
+                <p class="card-text"> exclusivas y pagos automáticos. Por su  parte las empresas</p>                
+                <p class="card-text"> encuentran en nosotros una alternativa muy efectiva para lograr </p>
+                <p class="card-text"> una mayor fidelización de sus clientes</p>
+                </div>
+            </div>
+         </div>
+    </section>
+
+    <footer data-aos="flip-left">
+        <div class="icons-copyright">
+            <h2 class="h3footer">Estás a punto de mejorar la gestión de tu negocio</h2>
+            <h2 class="h3footer">Adquiriendo nuestros productos</h2>
+            <div class="icons">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-twitter"></i>
+                <i class="bi bi-pinterest"></i>
+                <i class="bi bi-instagram"></i>
+            </div>            
+            <p class="copyright">© 2023 Soluciones de Desarrollo y Tecnologia.</p>
+        </div>
+    </footer>
+        
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> <!-- script de swiper js -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+        AOS.init();
+     </script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+     <script src="index.js"></script>
+  </body>
+</html>

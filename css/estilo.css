@@ -1,0 +1,804 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root
+{
+    --white: #f9f9f9;
+    --green: #229395;
+    --green-light: #7acbcd;
+    --black: #36383F;
+    --grey: #85888C;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+main{
+    padding: 20px;
+    background-color: var(--green); 
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.header{
+    background-color: var(--green);  
+    position: sticky;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.nav{
+    width: 100%;
+    position: relative;
+    background-color: var(--green);
+    overflow: hidden;
+    max-height: 0; 
+    transition: max-height 1.0s ease-out;
+    z-index: 1;
+    display: block;
+}
+
+.menu a{
+    margin-top:20px;
+    display: block;
+    padding: 20px;
+    color: var(--white); 
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.menu a:hover{
+    background-color: var(--green-light);
+}
+
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+    
+}
+
+.hamb-line::before,
+.hamb-line::after
+{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before{
+    top: 5px;
+}
+
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line 
+{
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+ /**********************************************/
+ /*************  Transicion de Titulos H...2,3*/
+ /*********************************************/
+ .square {
+    width: 100%;
+    height: 60px;
+    border-radius: 8px;
+    background-color: rgb(173, 165, 224);
+    transition-duration: 1000ms;
+    transition-timing-function: ease;
+    padding: 8px;
+  }
+  
+  .squaretit {
+    width: 50%;
+    height: 70px;
+    border-radius: 8px;
+    background-color: rgb(173, 165, 224);
+    transition-duration: 1000ms;
+    transition-timing-function: ease;
+    padding: 8px;
+  }
+  
+  .square.tp-transform {
+    transition-property: transform;
+  }
+  
+  .square.tp-color {
+    transition-property: background-color;
+  }
+  
+  .square.tp-both {
+    transition-property: background-color, transform;
+  }
+  
+  .square.tp-none {
+    transition-property: none;
+  }
+  
+  .square:is(:hover, :focus) {
+    transform: scale(1.3);
+    background-color: cornflowerblue;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 3px;
+  }
+  
+  .wrapper .square:nth-child(odd) {
+    justify-self: end;
+  }
+  
+  .wrapper .square:nth-child(even) {
+    justify-self: start;
+  }
+  
+ /*****************************************/
+ /*************  TERMINO Transicion */
+ /***************************************/
+
+.header {
+  background-color: var(--green);
+  position: sticky;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+header img {
+    width: 90%;   
+    height: 80vh;  
+    margin-top: 60px; 
+    margin-left :30px;
+    border-radius: 10px;
+  }
+  
+.header div h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: -300px;
+  letter-spacing: 2px;
+  border-right: 2px solid #111;
+  font-size: 26px;
+  border: none;
+  color: white;
+  padding-top: 30px;
+  margin-left: 90px;
+  z-index: 1;
+}
+
+header div p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 100px;
+    letter-spacing: 2px;
+    padding-left: 60px;
+    color :white;
+  }
+
+.container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0px 0px; 
+    background-color: var(--green);
+    margin-top: 0px;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;    
+    text-align: center;
+    border: 1px solid rgb(221, 220, 220);
+    border-radius: 8px;
+}
+
+.card button {
+    width: 40px;
+    padding: 10px;
+    border-radius: 50%;    
+}
+
+button:hover {
+    background-color: mediumslateblue
+}
+
+.container-card {
+    width: 120px;
+    height: 100px;
+    
+}
+
+.container-card img {
+     background-color: teal;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     height: 100px;
+     width: 100px;
+     margin-left: 80%;
+
+}
+
+  /* Reescribo Clases dCard de Bootstrap */
+  .card-img, .card-img-bottom, .card-img-top {
+     width: 10%;
+  } 
+    
+  .prologo {
+    display: inline-block;
+    color: var(--white);
+    font-size: 25px;
+    margin-left: 20px;
+   }
+
+   #idname-busqueda{
+     margin-left: 20px;
+   }
+
+  .swiper {
+      margin-top: 30px;
+      width: 90%;
+      height: 350px;
+      z-index: 0;
+   }
+
+  footer {
+    background: rgb(0, 99, 248);
+    color: #fff;
+    padding: 10px;
+    margin-top: 80px;
+    align-items: center;
+    text-align: center; 
+    height: 28vh;
+  }
+  
+  footer div p {  
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    margin-bottom: 10px;
+    justify-items: center;
+  }
+  
+  footer ul li a {
+    color: #eee;
+  }
+
+  /***********************************************/
+  /*************** Clases de CONTACTO
+  /***********************************************/
+.conlogo {
+    display: inline-block;
+    color: var(--white);
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.conh2{
+    margin-top: 25px;
+    margin-left: 50px;
+    width: 220px;
+    font-size: 13px;
+    height:auto;
+    margin-bottom: 20px;
+}
+
+.map iframe {
+    max-width: 100%;    
+    height:380px; 
+    width:90%;  
+    margin-left: 30px;
+    margin-right: 40px;
+    border:50;
+  }
+
+  .conh3 {
+    font-size: 13px;
+    color: white;
+    padding-left: 50px;
+    padding-top: 0px;
+  }  
+
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 70%;
+    margin-left:50px;
+    margin-top:40px;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical; 
+  }
+
+    input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+        
+   input[type=submit]:hover {
+        background-color: #45a049;
+    }
+  
+/**********************************************/
+
+  .h2pro {
+    margin-top: 45px;
+    margin-left: 50px;
+    width: 130px;
+    font-size: 15px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .h2proofer {
+    margin-top: 45px;
+    margin-left: 50px;
+    width: 170px;
+    font-size: 17px;
+    height: auto;
+    margin-bottom: 10px;
+    background-color: rgb(230, 43, 43);
+    color: white;
+  }
+
+  .cardnos {
+    width: 95%;
+    height: 400px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;    
+    text-align: center;
+    border: 1px solid rgb(221, 220, 220);
+    border-radius: 20px;
+    color: #eee;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .asesoria{
+    margin-top: 60px;
+  }
+
+  /*********************************************/
+  /********** Boton Claro/ Oscuro
+  /*********************************************/
+  .oscuro{ 
+    background-color: rgb(48, 121, 123);
+  }
+  
+  .btnDark {
+    display: flex;
+    padding:10px;
+    border-radius: 20px;
+    background-color: rgb(142, 219, 222); 
+    margin-top: 500px;
+    position: fixed;
+    font-size: 8px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;  
+    margin-left: 10px; 
+    z-index: 1;
+     right: 10px; 
+  }
+
+   /* Parrafos del Carrito */
+   .pcar-stor2{
+    color:  rgb(168, 209, 211);
+    font-size: 16px;
+    font-weight: bold;
+   }
+
+    .pcar-stor{
+        color:white;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .inp-cant {
+        text-align:right;
+        width:50px;
+        height:10px;
+     }
+
+    .totvta{
+        font-size: 29px;
+        font-weight: bold;
+        width: 90%;
+        height: 170px;
+        margin: 10px;
+        padding: 10px;
+        margin-left: 25px;
+        display: inline-block;
+        text-align: center;
+        gap:10px;
+        border: 1px solid rgb(221, 220, 220);
+        border-radius: 20px;
+        color: #eee;
+        background-color: var(--green)
+    }
+
+    .imgpago{
+        width: 210px;
+        height: 60px;
+    }
+
+    /* Check de Orden de productos... */
+    .form-check{
+        margin-left: 20px;
+        color: white;
+    }
+
+      /* Carrusel Bootstrap */
+  .carousel-inner img {
+      width: 90%; 
+      margin-left: 20px;
+      opacity: 0.8;
+      height: 300px;
+   }
+ 
+
+/************************************************/
+/************** MEDIA QUERY para PC o + */
+/************************************************/
+ @media (min-width: 768px)  {  
+    .nav{
+            max-height: none;
+            top: 0;
+            position: relative;
+            float: right;
+            width: fit-content;
+            background-color: transparent;
+            font-size: 13px;
+            margin-bottom: 0px;
+    }
+    
+    .menu li{
+        float: left;
+    }
+    
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--green-light)
+    }
+    
+    .hamb{
+        display: none;
+     }
+
+     /**********************************************/
+     /************* Transicion de Titulos H...2,3*/
+     /*********************************************/
+     .square {
+        width: 100%;
+        height: 70px;
+        border-radius: 8px;
+        background-color: rgb(173, 165, 224);
+        transition-duration: 1000ms;
+        transition-timing-function: ease;
+        padding: 8px;
+      }
+      
+      .squaretit {
+        width: 50%;
+        height: 70px;
+        border-radius: 8px;
+        background-color: rgb(173, 165, 224);
+        transition-duration: 1000ms;
+        transition-timing-function: ease;
+        padding: 8px;
+      }
+      
+      .square.tp-transform {
+        transition-property: transform;
+      }
+      
+      .square.tp-color {
+        transition-property: background-color;
+      }
+      
+      .square.tp-both {
+        transition-property: background-color, transform;
+      }
+      
+      .square.tp-none {
+        transition-property: none;
+      }
+      
+      .square:is(:hover, :focus) {
+        transform: scale(1.3);
+        background-color: cornflowerblue;
+      }
+      
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 3px;
+      }
+      
+      .wrapper .square:nth-child(odd) {
+        justify-self: end;
+      }
+      
+      .wrapper .square:nth-child(even) {
+        justify-self: start;
+      }
+      
+     /*****************************************/
+     /*************  TERMINO Transicion */
+    /*****************************************/    
+    
+    /*****************************************/
+    /*****************INICIO (Inidex.html) 
+    /****************************************/
+    .prologo{
+        display: inline-block;
+        color: var(--white);
+        font-size: 25px;
+        margin-left: 20px;
+    }
+        
+   .h2pro{
+        margin-top: 30px;
+        margin-left: 50px;
+        width: 130px;
+        font-size: 13px;
+        height:auto;
+        color: black;
+    }
+
+    .h2proofer {
+        margin-top: 45px;
+        margin-left: 50px;
+        width: 270px;
+        font-size: 17px;
+        height: auto;
+        margin-bottom: 10px;
+        background-color: rgb(230, 43, 43);
+        color: white;
+      }
+
+     header img {
+        width: 92%;   
+        height: 50vh;
+        margin-top: 0px; 
+        margin-left :50px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      header div h1 {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: -380px;
+        letter-spacing: 2px;
+        border-right: 2px solid #111;
+        font-size: 30px;
+        border: none;
+        color:white;
+        padding-top: 30px;
+        margin-left: 90px;
+        z-index: 1;
+      }
+    
+      header div p {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 100px;
+        letter-spacing: 2px;
+        padding-left: 90px;
+        color :white;
+      }
+    
+    .asesoria{
+        margin-top: 90px;
+    }
+    
+    .cardnos {
+        width: 95%;
+        height: 300px;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;    
+        text-align: center;
+        border: 1px solid rgb(221, 220, 220);
+        border-radius: 20px;
+        color: #eee;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+     footer {
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 100px;
+        height: 30%;
+      }
+    
+      footer div p {
+        font-size: 12px;
+      }
+    
+      .h2footer {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    
+     /*****************************************/
+     /*************  NOSOTROS           */
+     /***************************************/
+     .noslogo{
+        display: inline-block;
+        color: var(--white);
+        font-size: 30px;
+        margin-left: 20px;
+        }
+    
+     .nosh2{
+        margin-left: 50px;
+        width: 160px;
+        font-size: 15px;
+        height:auto;
+        color: black;
+    }
+    
+    .nosh2_1{
+      margin-left: 50px;
+      width: 160px;
+      font-size: 15px;
+      height:auto;
+      color: black;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .card-img, .card-img-bottom, .card-img-top {
+        width: 10%;
+    } 
+
+    /***********************************************/
+    /*************** CONTACTO
+    /***********************************************/   
+    .map iframe {
+        max-width: 100%;    
+        height:380px; 
+        width:90%;  
+        margin-left: 50px;
+        margin-right: 40px;
+        border:50;
+      }
+    
+      .conh3 {
+        font-size: 15px;
+        color: white;
+        padding-left: 50px;
+        padding-top: 0px;
+      }  
+    
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 70%;
+        margin-left:50px;
+        margin-top:40px;
+      }
+    
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+    
+      input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+            
+      input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    .inp-cant {
+        width: 50px;
+        text-align: right;
+        height: 10px;
+        font-weight: bold;
+     }
+        
+    /* Debo cambiar la cla de Carrusel Bootstrap  */
+    .carousel-inner img {
+       width: 100%; 
+       opacity: 0.8;
+       height: 300px;
+    } 
+    
+    .carcli { 
+      max-width: 50%; 
+      margin-left: 20px;
+    }
+
+    .swiper {
+        margin-top: 30px;
+        width: 550px;
+        height: 350px;
+     }
+}
+
+    
+     
+    
