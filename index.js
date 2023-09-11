@@ -47,7 +47,6 @@
     // Si la información del producto es correcta
     // almaceno datos en LocalStorage
      function savedatos(id,stock) {            
-      //  alert("click imagen(0) :"+id);
 
         let berror = false;
         //Rescato Cantidad de Input Cantidad           
@@ -82,7 +81,6 @@
        if (! berror ) {
             let url = `https://dummyjson.com/products/${id}`;
             let data = [];
-            //alert(" on click" );
             fetch(url)
             .then( respuesta => respuesta.json())
             .then( (informacion) => {
@@ -128,7 +126,6 @@
     if (eleh2 != null) {
         eleh2.addEventListener("click", (e) => {            
             let url = `https://dummyjson.com/products`;
-            //alert(" on click" );
             fetch(url)
             .then( respuesta => respuesta.json())
             .then( (informacion) => {
@@ -240,15 +237,17 @@
                 console.log("contacto-inputname:");
                 console.log(inputname.value);
 
-                if (inputname.value == ""){
-                    Swal.fire({
-                        title: "Error Nombre",
-                        text: "Debe ingresar nombre de contacto !!",
-                        icon: "error",
-                        footer: "Mail Contacto"
-                    })
+                 if (inputname.value == ""){
+                    Toastify({
+                        text: ` Debe ingresar
+                                Nombre del contacto ..! `,
+                        className: "error",
+                        style: {
+                          backgroundcolor : "green",
+                        }
+                    }).showToast();
+                    inputname.focus();
                     berror = true;
-                    inputname.focus;
                 }
             }
 
@@ -257,13 +256,16 @@
                 console.log("contacto-inputcelu");
                 console.log(inputcelu.value);
 
-                if (inputcelu.value.trim() == ""){
-                    Swal.fire({
-                        title: "Error Celular",
-                        text: "Debe ingresar fono de contacto !!",
-                        icon: "error",
-                        footer: "Mail Contacto"
-                    })
+               if (inputcelu.value == ""){
+                    Toastify({
+                        text: ` Debe ingresar
+                                Fono de contacto ..! `,
+                        className: "error",
+                        style: {
+                        backgroundcolor : "green",
+                        }
+                    }).showToast();
+                    inputcelu.focus();
                     berror = true;
                 }                
             }
@@ -273,26 +275,36 @@
                 console.log("contacto-inputmail");
                 console.log(inputmail.value);
                 
-                if (inputmail.value.trim() == ""){
-                    Swal.fire({
-                        title: "Error Mail",
-                        text: "Debe ingresar mail de contacto !!",
-                        icon: "error",
-                        footer: "Mail Contacto"
-                    })
+                if (inputmail.value == ""){
+                    Toastify({
+                        text: ` Debe ingresar
+                                Mail del contacto ..! `,
+                        className: "error",
+                        style: {
+                        backgroundcolor : "green",
+                        }
+                    }).showToast();
+                    inputmail.focus();
                     berror = true;
                 }
             }
 
             if (!berror) { 
                 Swal.fire({
-                    title: "Correo enviado.Te contactaremos !",
-                    text: "Información enviada correctamente ",
-                    icon: "success",
-                    footer: "Envío mail"
-                })
+                    title: "Envio de Mail OK!",
+                    text: "Gracias por escribirnos. Te contactaremos a la brevedad !",
+                    icon: "info",
+                    footer: "Mail contacto"  
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.reload();
+                    } else if (result.isDenied) {
+                        alert("Error");
+                    }
+              })
+                
             }
-        })
+        });
     } // if  btnContacto 
         
     // Esta función es para cambiar el estado de botón oscuro/claro
@@ -306,7 +318,6 @@
         let cards_ = document.getElementsByClassName("container-cards");  
         let totvta_ = document.getElementsByClassName("totvta");  
 
-        //alert("alert oscuro(cambio-1):"+oscuro);
         localStorage.setItem("oscuro", oscuro);
 
         if (oscuro ) {  
@@ -472,7 +483,7 @@
                     cargarLocalstorage();
                     Swal.fire('Registro eliminado!', '', 'success');
                 } else if (result.isDenied) {
-                   Swal.fire('Eliminación cancelada', '', 'info')
+                    Swal.fire('Eliminación cancelada', '', 'info')
                 }
           })
     }
