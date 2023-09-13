@@ -1,4 +1,4 @@
-  
+''  
     let sCards = "";
     const loadHtml = data => {
         const cards = data.reduce( ( acc, elemento ) => {
@@ -123,25 +123,39 @@
     // Acá rescato productos de la api y la muestro en 
     // tarjetas....
     const eleh2 = document.querySelector("#h2pro");
+    console.log("eleh2");
+    console.log(eleh2);
     if (eleh2 != null) {
-        eleh2.addEventListener("click", (e) => {            
-            let url = `https://dummyjson.com/products`;
+
+        Toastify({
+            text: ` Rescatando Información
+                    de productos de la B.D.
+                `,
+            className: "error",
+            style: {
+              backgroundcolor : "green",
+            }
+        }).showToast();
+
+
+
+        loadData();
+
+    }  
+
+    function loadData(){
+        let url = `https://dummyjson.com/products`;
             fetch(url)
             .then( respuesta => respuesta.json())
             .then( (informacion) => {
                 let productos = informacion.products;
                 let data_ = [];
-                console.log("datos:");
-                console.log(productos);
-
                 // verifico el orden del los productos 
                 // por precios
                 const chk1 = document.querySelector("#chk1");
                 const chk2 = document.querySelector("#chk2");
                 const chk3 = document.querySelector("#chk3");
                 const chk4 = document.querySelector("#chk4");
-                console.log("Valido orden información chk1");
-                console.log(chk1.checked);
 
                 //  Ordenar productos 
                 // según lo pedido
@@ -221,9 +235,8 @@
                 } // if.... id = null ...
                 loadHtml(data_);
             })
-        })
-        }    
-
+        }
+           
     // Rescato evento Click del botón de contacto.
     // luego ejecuto unas validaciones y muestro un Sweet alert si corresponde
     const btncon = document.querySelector("#btncon");
@@ -358,11 +371,17 @@
            if (cards_.length >= 1) {cards_[0].style.backgroundColor = '#229395'} 
            if (totvta_.length >= 1) {totvta_[0].style.backgroundColor = '#229395'} 
         }
-      }      
+      }          
       
+      document.addEventListener("DOMContentLoaded", (event) => {
+          if (localStorage.getItem("oscuro")) {
+             loadModo();
+          };        
+      });
+
       // Verifico si el HTML esta cargado
       // y aplico color dia/Noche
-      document.addEventListener("DOMContentLoaded", function() {         
+      document.addEventListener("(1)DOMContentLoaded", function() { 
          if (localStorage.getItem("oscuro")) {
             loadModo();
          }
